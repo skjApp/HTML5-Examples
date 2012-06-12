@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Example - Canvas Basic</title>
+	</head>
+	<body>
+		<canvas id = "canvas1" width = "600" height = "600">
+		</canvas>
+		
+		<script type="text/javascript">
+			
+			var ctx = document.getElementById('canvas1').getContext('2d') ;
+			
+			var img = new Image() ;   	// Create new Image object
+			img.src = 'http://skjsaurabh.wpengine.com/wp-content/uploads/2012/06/176.png' ; 		// assign source to image
+			
+			function drawImg()
+			{
+				// ctx.drawImage(img, 10, 10) ;
+				// ctx.drawImage(img, 10, 10, 88, 27) ;
+				ctx.drawImage(img, 0, 0, 88, 53, 10, 10, 88, 53) ;
+			}
+			
+			img.onload = drawImg ;
+			
+		</script>
+	</body>
+</html>

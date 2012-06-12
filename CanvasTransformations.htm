@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Example - Canvas Transformations</title>
+	</head>
+	<body>
+		<canvas id = "canvas1" width = "600" height = "600">
+		</canvas>
+		
+		<script type="text/javascript">
+			
+			var ctx = document.getElementById('canvas1').getContext('2d') ;
+			
+			ctx.fillStyle = "black" ;
+			ctx.fillRect(0,0,600,600) ;
+			
+			var img = new Image() ;   	// Create new Image object
+			img.src = 'http://skjsaurabh.wpengine.com/wp-content/uploads/2012/06/176.png' ; 		// assign source to image
+			
+			function drawImg()
+			{
+				// Scale
+				// ctx.scale(2,1.5) ;
+				
+				// Rotate
+				//var angleDegrees = 10 ;
+				//var angleRadians = (Math.PI/180) * angleDegrees ;
+				//ctx.rotate(angleRadians) ;
+				
+				// Translate
+				ctx.translate(50,10) ;
+				
+				ctx.drawImage(img, 0, 0) ;
+			}
+			
+			img.onload = drawImg ;
+			
+		</script>
+	</body>
+</html>

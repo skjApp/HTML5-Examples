@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Example - Canvas Basic</title>
+	</head>
+	<body>
+		<canvas id = "canvas1" width = "600" height = "600">
+		</canvas>
+		
+		<script type="text/javascript">
+			
+			var ctx = document.getElementById('canvas1').getContext('2d') ;
+			
+			// Drawing a simple line
+			ctx.beginPath() ;			
+			ctx.moveTo(50,50) ;			// Starting point of line 
+			ctx.lineTo(100,50) ;		// Ending point of line
+			ctx.closePath() ;
+			ctx.stroke() ;				// Drawing the above coded path
+			
+			// Stroked Rectangle
+			ctx.beginPath() ;
+			ctx.rect(150,50, 100,100) ;
+			ctx.closePath() ;
+			ctx.stroke() ;
+			
+			// Filled Rectangle
+			ctx.beginPath() ;
+			ctx.rect(300,50, 100,100) ;
+			ctx.closePath() ;
+			ctx.fill() ;
+			
+			// Stroked Circular Arc
+			var startAngleinDegrees = 0 ;
+			var endAngleinDegrees	= 120 ;
+			
+			var startAngleinRadians = (Math.PI/180) * startAngleinDegrees ;
+			var endAngleinRadians	= (Math.PI/180) * endAngleinDegrees ;
+			
+			ctx.beginPath() ;
+			ctx.arc(200, 250, 50, startAngleinRadians, endAngleinRadians, false) ; 
+			ctx.stroke() ;
+			
+			// Stroked Elliptical Arc
+			/*var startAngleinDegrees = 0 ;
+			var endAngleinDegrees	= 120 ;
+			
+			var startAngleinRadians = (Math.PI/180) * startAngleinDegrees ;
+			var endAngleinRadians	= (Math.PI/180) * endAngleinDegrees ;
+			
+			ctx.beginPath() ;
+			ctx.ellipse(200, 250, 50, 50, 0, startAngleinRadians, endAngleinRadians, false) ;
+			ctx.closePath() ;
+			ctx.stroke() ;*/
+			
+			
+			// Circle
+			var startAngleinDegrees = 0 ;
+			var endAngleinDegrees	= 360 ;
+			
+			var startAngleinRadians = (Math.PI/180) * startAngleinDegrees ;
+			var endAngleinRadians	= (Math.PI/180) * endAngleinDegrees ;
+			
+			ctx.beginPath() ;
+			ctx.arc(350, 250, 50, startAngleinRadians, endAngleinRadians, false) ; 
+			ctx.stroke() ;
+			
+			// Ellipse
+			/*var startAngleinDegrees = 0 ;
+			var endAngleinDegrees	= 360 ;
+			
+			var startAngleinRadians = (Math.PI/180) * startAngleinDegrees ;
+			var endAngleinRadians	= (Math.PI/180) * endAngleinDegrees ;
+			
+			ctx.beginPath() ;
+			ctx.ellipse(200, 250, 50, 50, 0, startAngleinRadians, endAngleinRadians, false) ;
+			ctx.closePath() ;
+			ctx.stroke() ;*/
+			
+			// Quadratic Curve
+			ctx.beginPath();
+			ctx.moveTo(450,450);
+			ctx.quadraticCurveTo(350,450,350,350);
+			ctx.stroke();
+			
+			// Bezier Curve
+			ctx.beginPath();
+			ctx.moveTo(550,450);
+			ctx.bezierCurveTo(350,300,400,450,550,350);
+			ctx.stroke();
+			
+			
+		</script>
+	</body>
+</html>

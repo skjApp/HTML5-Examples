@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Example - Canvas Pixel Manipulation</title>
+	</head>
+	<body>
+		<canvas id = "canvas1" width = "600" height = "600">
+		</canvas>
+		
+		<script type="text/javascript">
+			
+			var ctx = document.getElementById('canvas1').getContext('2d') ;
+			
+			// Drawing a square using Pixel Manipulation
+			var imgData = ctx.createImageData(80,80);
+			var pix = imgData.data;
+
+			// Loop over each pixel and set a transparent red.
+			for (var i = 0, len = pix.length; i < len; i += 4)
+			{
+  				pix[i  ] = 255; // red channel
+  				pix[i+3] = 127; // alpha channel
+			}
+
+			// Draw the ImageData object at the given (x,y) coordinates.
+			ctx.putImageData(imgData, 0,0);
+			
+			
+			// Changing the RGB values of pixels from drawn canvas
+
+			var imgData = ctx.getImageData(0, 0, 200, 100);
+			var pix = imgData.data;
+
+			// Loop over each pixel and invert the color.
+			for (var i = 0, len = pix.length; i < len; i += 4)
+			{
+				// red
+				pix[i] = 255 - pix[i];
+				
+				// green
+				pix[i + 1] = 128 - pix[i + 1];
+				
+				// blue
+				pix[i + 2] = 255 - pix[i + 2];
+				
+				// i+3 is alpha (the fourth element)
+			}
+
+				// Draw the ImageData at the given (x,y) coordinates.
+				ctx.putImageData(imgData, 300, 200);
+
+		</script>
+	</body>
+</html>

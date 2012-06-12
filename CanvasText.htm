@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Example - Canvas Basic</title>
+	</head>
+	<body>
+		<canvas id = "canvas1" width = "300" height = "200">
+		</canvas>
+		
+		<script type="text/javascript">
+			
+			var ctx = document.getElementById('canvas1').getContext('2d') ;
+			
+			// Simple Stroke Text
+			ctx.strokeText("Hello World!", 10,10) ;
+			
+			// Stroke Text with Maximum Width
+			ctx.strokeText("Hello World!", 10,30,40) ;
+			
+			// Simple Fill Text
+			ctx.fillText("Hello World!", 100,10) ;
+			
+			// Fill Text with Maximum Height
+			ctx.fillText("Hello World!", 100,30, 40) ;
+			
+			
+			// Getting Font Metrics
+			var metrics = ctx.measureText("HelloWorld!") ;
+			
+			document.write("</br>") ;
+			document.write("metrics.width "						+ metrics.width 					+ "</br>") ;
+			document.write("metrics.actualBoundingBoxRight "	+ metrics.actualBoundingBoxRight  	+ "</br>") ;
+			document.write("metrics.fontBoundingBoxAscent " 	+ metrics.fontBoundingBoxAscent  	+ "</br>") ;
+			document.write("metrics.fontBoundingBoxDescent " 	+ metrics.fontBoundingBoxDescent  	+ "</br>") ;
+			document.write("metrics.actualBoundingBoxAscent " 	+ metrics.actualBoundingBoxAscent  	+ "</br>") ;
+			document.write("metrics.actualBoundingBoxDescent "	+ metrics.actualBoundingBoxDescent  + "</br>") ;
+			document.write("metrics.emHeightAscent "			+ metrics.emHeightAscent  			+ "</br>") ;
+			document.write("metrics.emHeightDescent "			+ metrics.hangingBaseline  			+ "</br>") ;
+			document.write("metrics.alphabeticBaseline "		+ metrics.alphabeticBaseline  		+ "</br>") ;
+			document.write("metrics.ideographicBaseline "		+ metrics.ideographicBaseline  		+ "</br>") ;
+			
+		</script>
+	</body>
+</html>

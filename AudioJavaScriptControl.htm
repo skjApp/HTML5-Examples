@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Example - Audio with JavaScript Controlled Play</title>
+	</head>
+	<body>
+		<audio id = "audio1" src="http://upload.wikimedia.org/wikipedia/commons/7/7a/Mkgandhi.ogg">
+			Test Audio - File by Tito Dutta (Own work) [CC-BY-SA-3.0 (http://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons
+		</audio>
+		
+		<script type = "text/javascript">
+			var audio1 = document.getElementById('audio1') ;
+			
+			function playAudio()
+			{
+				audio1.volume = 0.1 ;		// Setting volume to maximum (Range : 0 to 1)
+				audio1.play() ;
+			}
+			
+			audio1.onload = playAudio() ; 
+			
+		</script>
+	</body>
+</html>

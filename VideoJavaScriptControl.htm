@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Example - Canvas Basic</title>
+	</head>
+	<body>
+		<video id = "video1" src="http://upload.wikimedia.org/wikipedia/commons/7/7e/2010-07-14-Blitze-Zeitlupe-1-08.ogg"> Test Video </video>
+		
+		<script type = "text/javascript">
+			var video1 = document.getElementById('video1') ;
+			
+			function playVideo()
+			{
+				video1.volume = 1 ;		// Setting volume to maximum (Range : 0 to 1)
+				video1.play() ;
+			}
+			
+			video1.onload = playVideo() ; 
+			
+		</script>
+	</body>
+</html>

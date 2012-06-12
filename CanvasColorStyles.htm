@@ -11,17 +11,41 @@
 			
 			var ctx = document.getElementById('canvas1').getContext('2d') ;
 			
-			var img = new Image() ;   	// Create new Image object
-			img.src = 'http://skjsaurabh.wpengine.com/wp-content/uploads/2012/06/176.png' ; 		// assign source to image
+			// Setting Stroke Color by name
+			ctx.strokeStyle = "blue" ;
+			ctx.strokeRect(35,35,60,60) ;
 			
-			function drawImg()
-			{
-				// ctx.drawImage(img, 10, 10) ;
-				// ctx.drawImage(img, 10, 10, 88, 27) ;
-				ctx.drawImage(img, 0, 0, 88, 53, 10, 10, 88, 53) ;
-			}
+			// Setting Stroke Color by rgb
+			ctx.strokeStyle = 'rgb(255,0,0)' ;
+			ctx.strokeRect(135,35,60,60) ;
 			
-			img.onload = drawImg ;
+			// Setting Stroke Color by rgba
+			ctx.strokeStyle = 'rgba(255,0,0,0.5)' ;
+			ctx.strokeRect(235,35,60,60) ;
+			
+			// Setting Stroke Color by rgb as hexvalue
+			ctx.strokeStyle = '#00ff00' ;
+			ctx.strokeRect(335,35,60,60) ;
+			
+			
+			
+			// Setting Fill Color by name
+			ctx.fillStyle = "blue" ;
+			ctx.fillRect(35,135,60,60) ;
+			
+			// Setting Fill Color by rgb
+			ctx.fillStyle = 'rgb(255,0,0)' ;
+			ctx.fillRect(135,135,60,60) ;
+			
+			// Setting Fill Color by rgba
+			ctx.fillStyle = 'rgba(255,0,0,0.5)' ;
+			ctx.fillRect(235,135,60,60) ;
+			
+			// Setting Fill Color by rgb as hexvalue
+			ctx.fillStyle = '#00ff00' ;
+			ctx.fillRect(335,135,60,60) ;
+			
+			
 			
 		</script>
 	</body>

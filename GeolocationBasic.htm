@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Example - Geolocation Basic</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+					
+			navigator.geolocation.getCurrentPosition
+			(
+				// Inline anonymous function
+				function(position)
+				{
+    				alert(position.coords.latitude + ", " + position.coords.longitude);
+				}
+			);
+			
+		</script>
+		
+	</body>
+</html>

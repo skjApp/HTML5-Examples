@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Example - Geolocation Advanced 1</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			function getLocation()
+			{
+				if (navigator.geolocation)
+			    {
+			    	navigator.geolocation.getCurrentPosition(showPosition, showError);
+			    }
+			  	else
+			  	{
+			  		document.writeln("Geolocation is not supported by this browser.");
+			  	}
+			  }
+			  
+			function showPosition(position)
+			{
+				document.writeln("Latitude: " + position.coords.latitude + " degrees <br/>Longitude: " + position.coords.longitude + " degrees <br/>Accuracy: " + position.coords.accuracy + " metres") ; 
+			}
+			
+			function showError(error)
+			{
+				alert("Error Code : " + error.code + "\nError Message : " + error.message) ; 
+			}
+			
+			document.writeln('Wait...') ;
+			getLocation() ;
+			
+		</script>
+		
+	</body>
+</html>

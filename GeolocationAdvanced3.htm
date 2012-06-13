@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Example - Geolocation Advanced 3</title>
+	</head>
+	<body>
+		
+		<input id = 'button1' type = 'button' value = 'Clear Location Watch'/>
+		
+		<script type="text/javascript">
+			
+			var watchID ;
+			
+			function watchLocation()
+			{
+				if (navigator.geolocation)
+			    {
+			    	watchID = navigator.geolocation.watchPosition(success, showError, {maximumAge:300000, timeout:30000});
+			    }
+			  	else
+			  	{
+			  		document.writeln("Geolocation is not supported by this browser.");
+			  	}
+			  }
+			  
+			function success(position)
+			{
+				document.writeln("Latitude: " + position.coords.latitude + " degrees <br/>Longitude: " + position.coords.longitude + " degrees <br/>Accuracy: " + position.coords.accuracy + " metres") ;
+			}
+			
+			function showError(error)
+			{
+				alert("Error Code : " + error.code + "\nError Message : " + error.message) ; 
+			}
+			
+			document.writeln('Wait...') ;
+			watchLocation() ;
+			
+			function clearWatchLocation()
+			{
+				navigator.geolocation.clearWatch(watchId);
+			}
+			
+			// To clear watchLocation
+			var button1 = document.getElementById('button1') ;
+			
+			button1.onclick = clearWatchLocation ; 
+			
+		</script>
+		
+	</body>
+</html>

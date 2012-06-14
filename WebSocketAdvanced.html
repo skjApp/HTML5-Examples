@@ -1,31 +1,66 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Pusher Test</title>
-		<script src="http://js.pusher.com/1.11/pusher.min.js" type="text/javascript"></script>
-	  
-	  	<script type="text/javascript">
+		<title>Example - WebSocket Advanced</title>
+	
+		<script type="text/javascript">
+						
+			var wsUri = "ws://ws.pusherapp.com:80/app/<pusher-key>?client=js&version=1.0&protocol=5";
+			var output;
+			
+			function init()
+			{
+				output = document.getElementById("output");
+				
+				websocket			= new WebSocket(wsUri);
+				
+				websocket.onopen	= onOpen ;
+				websocket.onclose	= onClose ;
+				websocket.onmessage	= onMessage ;
+				websocket.onerror	= onError ;
+			}
+			
+			function onOpen(event)
+			{
+				writeToScreen("CONNECTED");
+				doSend('{ "event": "pusher:subscribe", "data": { "channel": "test", "auth": "<pusher-key>:<pusher-secret>", "channel_data": {"abc":"def"} }}');
+			}
+			
+			function onClose(event)
+			{
+				writeToScreen("DISCONNECTED");
+			} 
+			
+			function onMessage(event)
+			{
+				writeToScreen('RESPONSE: ' + event.data) ;
+			}
+			
+			function onError(event)
+			{
+				writeToScreen('ERROR: ' + event.data);
+			}
+			
+			function doSend(message)
+			{
+				writeToScreen("SENT: " + message);
+				websocket.send(message);
+			}
+			
+			function writeToScreen(message)
+			{
+				var p = document.createElement("p");
+				p.innerHTML = message;
+				output.appendChild(p);
+			}
+			
+			window.addEventListener("load", init, false); 
 		
-				// Enable pusher logging - don't include this in production
-	    		Pusher.log = function(message)
-	    		{
-	      			if (window.console && window.console.log) window.console.log(message);
-	    		};
-	
-	    		// Flash fallback logging - don't include this in production
-	    		WEB_SOCKET_DEBUG = true;
-	
-	    		var pusher = new Pusher('94c6237aea277bd63dde');
-	    		var channel = pusher.subscribe('test_channel');
-	    		
-	    		channel.bind('my_event', function(data)
-	    		{
-	      			alert(data);
-	    		});
 		</script>
 	</head>
 	
 	<body>
-		Hello
+		<h2>Example - WebSocket Advanced (using pusher.com server)</h2>
+		<div id="output"></div>
 	</body>
 </html>

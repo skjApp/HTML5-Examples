@@ -11,32 +11,13 @@
 			function init()
 			{
 				output = document.getElementById("output");
-				testWebSocket();
-			}
-			
-			function testWebSocket()
-			{
-				websocket = new WebSocket(wsUri);
 				
-				websocket.onopen = function(event)
-				{
-					onOpen(event)
-				};
-					
-				websocket.onclose = function(event)
-				{
-					onClose(event)
-				};
+				websocket			= new WebSocket(wsUri);
 				
-				websocket.onmessage = function(event)
-				{
-					onMessage(event)
-				};
-				
-				websocket.onerror = function(event)
-				{
-					onError(event)
-				};
+				websocket.onopen	= onOpen ;
+				websocket.onclose	= onClose ;
+				websocket.onmessage	= onMessage ;
+				websocket.onerror	= onError ;
 			}
 			
 			function onOpen(event)
@@ -52,23 +33,24 @@
 			
 			function onMessage(event)
 			{
-				writeToScreen('<span style="color: blue;">RESPONSE: ' + event.data+'</span>'); websocket.close();
+				writeToScreen('RESPONSE: ' + event.data) ; 
+				websocket.close();
 			}
 			
 			function onError(event)
 			{
-				writeToScreen('<span style="color: red;">ERROR:</span> ' + event.data);
+				writeToScreen('ERROR: ' + event.data);
 			}
 			
 			function doSend(message)
 			{
-				writeToScreen("SENT: " + message);  websocket.send(message);
+				writeToScreen("SENT: " + message);
+				websocket.send(message);
 			}
 			
 			function writeToScreen(message)
 			{
 				var p = document.createElement("p");
-				
 				p.innerHTML = message;
 				output.appendChild(p);
 			}
@@ -79,7 +61,7 @@
 	</head>
 	
 	<body>
-		<h2>WebSocket Test</h2>
+		<h2>Example - WebSocket Basic</h2>
 		<div id="output"></div>
 	</body>
 </html>

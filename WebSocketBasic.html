@@ -1,3 +1,85 @@
 <!DOCTYPE html>
-  <meta charset="utf-8" />  <title>WebSocket Test</title>  <script language="javascript" type="text/javascript">  var wsUri = "ws://echo.websocket.org/"; var output;  function init() { output = document.getElementById("output"); testWebSocket(); }  function testWebSocket() { websocket = new WebSocket(wsUri); websocket.onopen = function(evt) { onOpen(evt) }; websocket.onclose = function(evt) { onClose(evt) }; websocket.onmessage = function(evt) { onMessage(evt) }; websocket.onerror = function(evt) { onError(evt) }; }  function onOpen(evt) { writeToScreen("CONNECTED"); doSend("WebSocket rocks"); }  function onClose(evt) { writeToScreen("DISCONNECTED"); }  function onMessage(evt) { writeToScreen('<span style="color: blue;">RESPONSE: ' + evt.data+'</span>'); websocket.close(); }  function onError(evt) { writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data); }  function doSend(message) { writeToScreen("SENT: " + message);  websocket.send(message); }  function writeToScreen(message) { var pre = document.createElement("p"); pre.style.wordWrap = "break-word"; pre.innerHTML = message; output.appendChild(pre); }  window.addEventListener("load", init, false);  </script>  <h2>WebSocket Test</h2>  <div id="output"></div>
-  </html>
+<html>
+	<head>
+		<title>Example - WebSocket Basic</title>
+	
+		<script type="text/javascript">
+						
+			var wsUri = "ws://echo.websocket.org/";
+			var output;
+			
+			function init()
+			{
+				output = document.getElementById("output");
+				testWebSocket();
+			}
+			
+			function testWebSocket()
+			{
+				websocket = new WebSocket(wsUri);
+				
+				websocket.onopen = function(event)
+				{
+					onOpen(event)
+				};
+					
+				websocket.onclose = function(event)
+				{
+					onClose(event)
+				};
+				
+				websocket.onmessage = function(event)
+				{
+					onMessage(event)
+				};
+				
+				websocket.onerror = function(event)
+				{
+					onError(event)
+				};
+			}
+			
+			function onOpen(event)
+			{
+				writeToScreen("CONNECTED");
+				doSend("www.skjApp.com Rocks!");
+			}
+			
+			function onClose(event)
+			{
+				writeToScreen("DISCONNECTED");
+			} 
+			
+			function onMessage(event)
+			{
+				writeToScreen('<span style="color: blue;">RESPONSE: ' + event.data+'</span>'); websocket.close();
+			}
+			
+			function onError(event)
+			{
+				writeToScreen('<span style="color: red;">ERROR:</span> ' + event.data);
+			}
+			
+			function doSend(message)
+			{
+				writeToScreen("SENT: " + message);  websocket.send(message);
+			}
+			
+			function writeToScreen(message)
+			{
+				var p = document.createElement("p");
+				
+				p.innerHTML = message;
+				output.appendChild(p);
+			}
+			
+			window.addEventListener("load", init, false); 
+		
+		</script>
+	</head>
+	
+	<body>
+		<h2>WebSocket Test</h2>
+		<div id="output"></div>
+	</body>
+</html>

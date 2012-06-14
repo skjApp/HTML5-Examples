@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Hello World</title>
+		
+		<style>
+			div
+			{
+				
+				margin-left : 100px ;
+				margin-top : 100px ;
+				width:200px;
+				height:200px;
+				background-color:red;
+				border:2px solid #a00000;
+				
+				font-size: 20px ;
+
+				/* EXAMPLE : 2D TRANSFORM ROTATE */
+				/* transform:rotate(45deg); */
+				/*-ms-transform:rotate(45deg); /* IE 9 */
+				/*-moz-transform:rotate(45deg); /* Firefox */
+				/*-webkit-transform:rotate(45deg); /* Safari and Chrome */
+				/*-o-transform:rotate(45deg); /* Opera */
+				
+				/* EXAMPLE : 2D TRANSFORM TRANSLATE */
+				/* transform: translate(100px,20px); */
+				/* -ms-transform: translate(100px,20px); /* IE 9 */
+				/* -webkit-transform: translate(100px,20px); /* Safari and Chrome */
+				/* -o-transform: translate(100px,20px); /* Opera */
+				/* -moz-transform: translate(100px,20px); /* Firefox */
+				
+				/* EXAMPLE : 2D TRANSFORM SCALE */
+				/* transform: scale(1.2,0.8); */
+				/* -ms-transform: scale(1.2,0.8); /* IE 9 */
+				/* -webkit-transform: scale(1.2,0.8); /* Safari and Chrome */
+				/* -o-transform: scale(1.2,0.8); /* Opera */
+				/* -moz-transform: scale(1.2,0.8); /* Firefox */
+				
+				/* EXAMPLE : 2D TRANSFORM TRANSLATE */
+				/* transform: skew(30deg,20deg); */
+				/* -ms-transform: skew(30deg,20deg); /* IE 9 */
+				/* -webkit-transform: skew(30deg,20deg); /* Safari and Chrome */
+				/* -o-transform: skew(30deg,20deg); /* Opera */
+				/* -moz-transform: skew(30deg,20deg); /* Firefox */
+				
+				/* EXAMPLE : 2D TRANSFORM MATRIX */
+				/* transform:matrix(0.8,0.6,-0.5,0.8,0,0); */
+				/* -ms-transform:matrix(0.8,0.6,-0.5,0.8,0,0); /* IE 9 */
+				/* -moz-transform:matrix(0.8,0.6,-0.5,0.8,0,0); /* Firefox */
+				/* -webkit-transform:matrix(0.8,0.6,-0.5,0.8,0,0); /* Safari and Chrome */
+				/* -o-transform:matrix(0.8,0.6,-0.5,0.8,0,0); /* Opera */
+				
+				/* EXAMPLE : 3D TRANSFORM ROTATE X */
+				/* transform: rotateX(135deg);
+				/* -webkit-transform: rotateX(135deg);		/* Safari and Chrome */
+				/* -moz-transform: rotateX(135deg);			/* Firefox */
+				
+				/* EXAMPLE : 3D TRANSFORM ROTATE Y */
+				/* transform: rotateY(35deg);
+				/* -webkit-transform: rotateY(35deg);		/* Safari and Chrome */
+				/* -moz-transform: rotateY(35deg);			/* Firefox */
+				
+				/* EXAMPLE : 3D TRANSFORM ROTATE Z */
+				/* transform: rotateZ(135deg);
+				/* -webkit-transform: rotateZ(135deg);		/* Safari and Chrome */
+				/* -moz-transform: rotateZ(135deg);			/* Firefox */
+				
+				/* EXAMPLE : 3D PERSPECTIVE */
+				/* perspective: 100;
+				-webkit-perspective: 100; /* Safari and Chrome */
+				
+				/* EXAMPLE : TRANSITION 1 */
+				/* transition: width 2s;
+				/* -moz-transition: width 2s; /* Firefox 4 */
+				/* -webkit-transition: width 2s; /* Safari and Chrome */
+				/* -o-transition: width 2s; /* Opera */
+				
+				/* EXAMPLE : TRANSITION 2 */
+				transition: width 2s, height 3s, transform 1s;
+				-moz-transition: width 2s, height 3s, -moz-transform 1s;
+				-webkit-transition: width 2s, height 3s, -webkit-transform 1s;
+				-o-transition: width 2s, height 3s,-o-transform 1s;
+				
+				
+				/* EXAMPLE : ROUNDED CORNERS*/
+				border:1px solid;
+				border-radius:8px;
+				-moz-border-radius:25px; /* Firefox 3.6 and earlier */
+				
+				/* EXAMPLE : SHADOW */
+				box-shadow: 10px 10px 5px #776666;
+				
+				/* TEXT EFFECTS */
+				text-shadow: 2px 1px 1px #020202 ;				/* h-shadow v-shadow blur color; */
+				text-wrap: 	normal ;							/* normal|none|unrestricted|suppress */
+					
+				/* ANIMATION EFFECT */
+				animation: testAnimation 4s;
+				-moz-animation: testAnimation 4s; /* Firefox */
+				-webkit-animation: testAnimation 4s; /* Safari and Chrome */
+				
+			}
+			
+			/*div:hover
+			{
+				width:300px;
+				height:300px;
+				
+				/* EXAMPLE : 2D TRANSFORM ROTATE */
+				/*transform:rotate(15deg);
+				/*-ms-transform:rotate(15deg); /* IE 9 */
+				/*-moz-transform:rotate(15deg); /* Firefox */
+				/*-webkit-transform:rotate(15deg); /* Safari and Chrome */
+				/*-o-transform:rotate(15deg); /* Opera */
+			/*}*/
+			
+			@keyframes testAnimation
+			{
+				from
+				{
+					background: red;
+					width:200px;
+					margin-left : 100px ;
+				}
+				to
+				{
+					background: orange;
+					width:400px;
+					margin-left : 200px ;
+				}
+			}
+				
+			@-moz-keyframes testAnimation /* Firefox */
+			{
+				from
+				{
+					background: red;
+					width:200px;
+					margin-left : 100px ;
+				}
+				to
+				{
+					background: orange;
+					width:400px;
+					margin-left : 200px ;
+				}
+			}
+				
+			@-webkit-keyframes testAnimation /* Safari and Chrome */
+			{
+				from
+				{
+					background: red;
+					width:200px;
+					margin-left : 100px ;
+				}
+				to
+				{
+					background: orange;
+					width:400px;
+					margin-left : 200px ;
+				}
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id = 'div1'>
+			This example is an example by www.skjApp.com
+		</div>
+	</body>
+</html>

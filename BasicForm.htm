@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Example - Forms</title>
+	</head>
+	<body>
+		
+		<form>
+			
+			<!-- 	
+				tel does not enforce a particular syntax.
+				So if you want to ensure a particular format, you can use pattern or setCustomValidity() to do additional validation.
+			-->
+			
+			<label>input type tel 
+				<input id = 'input1'		type = 'tel'	value = '+91 98111222333' />
+				<input id = 'button1'	type = 'button' value = 'validate' />
+			</label>
+			<br/>
+			
+			<label>input type search 
+				<input  id = 'input2' type = 'search' value = 'search any thing' autofocus />
+				<input id = 'button2'	type = 'button' value = 'validate' />
+			</label>
+			<br/>
+			
+			<label>input type url 
+				<input  id = 'input3' type = 'url' value = 'www.google.com' />
+				<input id = 'button3'	type = 'button' value = 'validate' />
+			</label>
+			<br/>
+			
+			<label>input type email 
+				<input  id = 'input4' type = 'email' value = 'saurabh@skjapp.com' />
+				<input id = 'button4'	type = 'button' value = 'validate' />
+			</label>
+			<br/>
+			
+			<label>input type datetime 
+				<input  id = 'input5' type = 'datetime' />
+				<input id = 'button5'	type = 'button' value = 'validate' />
+			</label>
+			<br/>
+			
+			<label>input type datetime-local 
+				<input  id = 'input6' type = 'datetime-local' />
+				<input id = 'button6'	type = 'button' value = 'validate' />
+			</label>
+			<br/>
+			
+			<label>input type date 
+				<input  id = 'input7' type = 'date' />
+				<input id = 'button7'	type = 'button' value = 'validate' />
+			</label>
+			<br/>
+			
+			<label>input type month 
+				<input  id = 'input8' type = 'month' />
+				<input id = 'button8'	type = 'button' value = 'validate' />
+			</label>
+			<br/>
+			
+			<label>input type week 
+				<input  id = 'input9' type = 'week' />
+				<input id = 'button9'	type = 'button' value = 'validate' />
+			</label>
+			<br/>
+			
+			<label>input type time 
+				<input  id = 'input10' type = 'time' />
+				<input id = 'button10'	type = 'button' value = 'validate' />
+			</label>
+			<br/>
+			
+			<label>input type number 
+				<input  id = 'input11' type = 'number' min="0" max="10" step="2" value="6" />
+				<input id = 'button11'	type = 'button' value = 'validate' />
+			</label>
+			<br/>
+			
+			<label>input type range 
+				<input id = 'input12' type = 'range' />
+				<input id = 'button12'	type = 'button' value = 'validate' />
+			</label>
+			<br/>
+			
+			<label>input type color 
+				<input  id = 'input13' type = 'color' />
+				<input id = 'button13'	type = 'button' value = 'validate' />
+			</label>
+			<br/>
+			
+		</form>
+		
+		<script type = 'text/javascript'>
+			
+			// Checking data validity for Input1
+			var input1	= document.getElementById('input1') ;
+			var button1 = document.getElementById('button1') ;
+			
+			button1.onclick = function()
+			{
+				alert(input1.checkValidity()) ;	// Returns true if the element's value has no validity problems; false otherwise.
+			}
+			
+			// Checking data validity for Input2
+			var input2	= document.getElementById('input2') ;
+			var button2 = document.getElementById('button2') ;
+			
+			button2.onclick = function()
+			{
+				alert(input2.checkValidity()) ;	// Returns true if the element's value has no validity problems; false otherwise.
+			}
+			
+			// Checking data validity for Input3
+			var input3	= document.getElementById('input3') ;
+			var button3 = document.getElementById('button3') ;
+			
+			button3.onclick = function()
+			{
+				alert(input3.checkValidity()) ;	// Returns true if the element's value has no validity problems; false otherwise.
+			}
+			
+			// Checking data validity for Input4
+			var input4	= document.getElementById('input4') ;
+			var button4 = document.getElementById('button4') ;
+			
+			button4.onclick = function()
+			{
+				alert(input4.checkValidity()) ;	// Returns true if the element's value has no validity problems; false otherwise.
+			}
+			
+			// Checking data validity for Input5
+			var input5	= document.getElementById('input5') ;
+			var button5 = document.getElementById('button5') ;
+			
+			button5.onclick = function()
+			{
+				alert(input5.checkValidity()) ;	// Returns true if the element's value has no validity problems; false otherwise.
+			}
+			
+			// Checking data validity for Input6
+			var input6	= document.getElementById('input6') ;
+			var button6 = document.getElementById('button6') ;
+			
+			button6.onclick = function()
+			{
+				alert(input6.checkValidity()) ;	// Returns true if the element's value has no validity problems; false otherwise.
+			}
+			
+			// Checking data validity for Input7
+			var input7	= document.getElementById('input7') ;
+			var button7 = document.getElementById('button7') ;
+			
+			button7.onclick = function()
+			{
+				alert(input7.checkValidity()) ;	// Returns true if the element's value has no validity problems; false otherwise.
+			} 
+			
+			// Checking data validity for Input8
+			var input8	= document.getElementById('input8') ;
+			var button8 = document.getElementById('button8') ;
+			
+			button8.onclick = function()
+			{
+				alert(input8.checkValidity()) ;	// Returns true if the element's value has no validity problems; false otherwise.
+			}
+			
+			// Checking data validity for Input9
+			var input9	= document.getElementById('input9') ;
+			var button9 = document.getElementById('button9') ;
+			
+			button9.onclick = function()
+			{
+				alert(input9.checkValidity()) ;	// Returns true if the element's value has no validity problems; false otherwise.
+			}
+			
+			// Checking data validity for Input10
+			var input10	= document.getElementById('input10') ;
+			var button10 = document.getElementById('button10') ;
+			
+			button10.onclick = function()
+			{
+				alert(input10.checkValidity()) ;	// Returns true if the element's value has no validity problems; false otherwise.
+			}
+			
+			// Checking data validity for Input11
+			var input11	= document.getElementById('input11') ;
+			var button11= document.getElementById('button11') ;
+			
+			button11.onclick = function()
+			{
+				alert(input11.checkValidity()) ;	// Returns true if the element's value has no validity problems; false otherwise.
+			}
+			
+			// Checking data validity for Input12
+			var input12	= document.getElementById('input12') ;
+			var button12 = document.getElementById('button12') ;
+			
+			button12.onclick = function()
+			{
+				alert(input12.checkValidity()) ;	// Returns true if the element's value has no validity problems; false otherwise.
+			}
+			
+			// Checking data validity for Input13
+			var input13	= document.getElementById('input13') ;
+			var button13 = document.getElementById('button13') ;
+			
+			button13.onclick = function()
+			{
+				alert(input13.checkValidity()) ;	// Returns true if the element's value has no validity problems; false otherwise.
+			}
+			
+		</script>
+		
+	</body>
+</html>

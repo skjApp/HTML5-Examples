@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Hello World</title>
+		<title>Example - CSS 3</title>
 		
 		<style>
 			div
@@ -10,8 +10,7 @@
 				margin-left : 100px ;
 				margin-top : 100px ;
 				width:200px;
-				height:200px;
-				background-color:red;
+				height:150px;
 				border:2px solid #a00000;
 				
 				font-size: 20px ;
@@ -100,6 +99,28 @@
 				-moz-animation: testAnimation 4s; /* Firefox */
 				-webkit-animation: testAnimation 4s; /* Safari and Chrome */
 				
+				
+				column-count:2;
+				-moz-column-count:2; /* Firefox */
+				-webkit-column-count:2; /* Safari and Chrome */
+
+				-moz-column-gap:20px; /* Firefox */
+				-webkit-column-gap:20px; /* Safari and Chrome */
+				column-gap:20px;
+				
+				/* Allowing User to Resize this Div */
+				resize:both;
+				overflow:auto;
+				
+				/* background: rgba(0, 0, 255, 0.5); */
+				color: rgba(255, 0, 0, 0.5);
+  				/*color: hsla(80, 25%, 33%, 1.00);*/ 
+  				
+  				/* EXAMPLE - LINEAR GRADIENT */
+  				background: -webkit-gradient(linear, left top, left bottom, from(#aaabeb), to(orange), color-stop(0.5, white), color-stop(0.5, #66cc00)) ;
+  				
+  				
+  				
 			}
 			
 			/*div:hover
@@ -167,7 +188,7 @@
 	</head>
 	<body>
 		<div id = 'div1'>
-			This example is an example by www.skjApp.com
+			This example is an example by www.skjApp.com . We hope you are able to learn CSS 3 by our examples.
 		</div>
 	</body>
 </html>

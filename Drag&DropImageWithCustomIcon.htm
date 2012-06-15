@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<style type="text/css">
+			#div1
+			{
+				width:350px;
+				height:70px;
+				padding:10px;
+				border:1px solid #aaaaaa;
+			}
+		</style>
+		
+		<script type="text/javascript">
+		
+		var dragIcon = document.createElement('img');
+		dragIcon.src = 'http://www.skjapp.com/wp-content/themes/toommorel-lite/images/facebook_32.png';
+		
+		function allowDrop(event)
+		{
+			event.preventDefault();		// Cancel the default browser action. This is to ensure that if we drop a link, the browser doesn’t go off and surf to that location
+		}
+		
+		function drag(event)
+		{
+			event.dataTransfer.setDragImage(dragIcon, -10, -10);
+			
+			event.dataTransfer.setData("testImage",event.target.id);		// testImage is the key used here for setting data. You can use any key
+		}
+		
+		function drop(event)
+		{
+			event.preventDefault(); 	// Cancel the default browser action. This is to ensure that if we drop a link, the browser doesn’t go off and surf to that location
+			
+			var data = event.dataTransfer.getData("testImage");				// testImage is the key used here for getting data because setData used it
+			event.target.appendChild(document.getElementById(data));
+		}
+		
+		</script>
+	</head>
+
+	<body>
+		
+		<p>Drag the SkjApp.com image into the rectangle:</p>
+		
+		<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+			
+		</div>
+		
+		<br />
+		<img id="drag1" src="http://skjsaurabh.wpengine.com/wp-content/uploads/2012/06/176.png" draggable="true" ondragstart="drag(event)" width="176" height="53" />
+		
+	</body>
+
+</html>

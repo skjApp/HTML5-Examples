@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Example - Video CSS 3 Rotate 2D </title>
+		
+		<style>
+			
+			video
+			{
+				margin-left : 100px ;
+				margin-top : 100px ;
+				border:8px solid #a00000;
+				
+				/* ANIMATION EFFECT */
+				animation: testAnimation 18s;
+				-moz-animation: testAnimation 18s; /* Firefox */
+				-webkit-animation: testAnimation 18s; /* Safari and Chrome */
+			}
+			
+			@keyframes testAnimation
+			{
+				from
+				{
+					width:200px;
+					margin-left : 100px ;
+				}
+				
+				to
+				{
+					width:600px;
+					margin-left : 200px ;
+				}
+			}
+				
+			@-moz-keyframes testAnimation /* Firefox */
+			{
+				from
+				{
+					width:200px;
+					margin-left : 100px ;
+				}
+				
+				to
+				{
+					width:600px;
+					margin-left : 200px ;
+				}
+			}
+				
+			@-webkit-keyframes testAnimation /* Safari and Chrome */
+			{
+				from
+				{
+					width:200px;
+					margin-left : 100px ;
+				}
+				
+				to
+				{
+					width:600px;
+					margin-left : 200px ;
+				}
+			}
+			
+		</style>
+		
+		
+	</head>
+	<body>
+		<video src="http://upload.wikimedia.org/wikipedia/commons/7/7e/2010-07-14-Blitze-Zeitlupe-1-08.ogg" controls> Test Video </video>
+	</body>
+</html>

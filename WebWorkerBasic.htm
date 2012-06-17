@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Example - Web Worker Basic</title>
+	</head>
+	
+	<body>
+		
+		<p>
+			Table of 2 : <div id="result"></div> 
+		</p>
+		
+		<button onclick="startWorker()">Start Web Worker</button>
+
+		<button onclick="stopWorker()">Stop Web Worker</button>
+
+		<br/>
+		<br/>
+
+		<script>
+			
+			var w;
+			
+			function startWorker()
+			{
+				if(typeof(Worker) !== "undefined")		// Checking whether Web Workers are supported or not in the browser
+				{	
+					if(w == undefined)
+				    {
+				    	w = new Worker("WebWorkerBasic.js");
+				    }
+					
+				    // Setting a meesage processing method
+				  	w.onmessage = receiveMessage ;
+				}
+				else
+				{
+					document.getElementById("result").innerHTML="Sorry, your browser does not support Web Workers";
+				}
+			}
+			
+			function stopWorker()
+			{ 
+				w.terminate();							// Terminating the worker
+				w = undefined ;
+			}
+			
+			function receiveMessage(event) 
+			{
+				document.getElementById("result").innerHTML = event.data;
+			};
+			
+		</script>
+
+</body>
+</html>

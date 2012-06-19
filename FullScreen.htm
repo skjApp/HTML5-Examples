@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Example - FullScreen API</title>
+	</head>
+	<body>
+		
+		<canvas id = 'canvas1' width = '300px' height = '300px'> Canvas Tag </canvas>
+		
+		<script type = 'text/javascript'>
+			
+			// Checking if Full Screen API is supported by Broswer
+			if(document.fullScreenEnabled == true || document.mozFullScreenEnabled == true || document.webkitFullScreenEnabled == true)
+			{
+				//alert('Your browser supports Full Screen API') ;
+			}
+			
+			var canvas1 = document.getElementById('canvas1') ;
+			var ctx		= canvas1.getContext('2d') ;
+			
+			ctx.fillStyle = "black" ;
+			ctx.fillRect(0,0,600,600) ;
+			
+			
+			if(canvas1.mozRequestFullScreen)
+			{
+				canvas1.mozRequestFullScreen();
+			}
+			else if(canvas1.webkitRequestFullScreen)
+			{
+				canvas1.webkitRequestFullScreen();
+			}
+			
+			
+			
+		</script>
+		
+	</body>
+</html>

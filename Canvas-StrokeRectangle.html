@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>HTML5 Canvas Example: Stroke_rectangle</title>
+	</head>
+	<body>
+		<canvas id = 'canvas1' width = "800" height = "800"></canvas>
+		
+		<script type = "text/javascript">
+			var ctx = document.getElementById('canvas1').getContext('2d') ;
+			
+			// Drawing a Stroked Rectangle
+			ctx.beginPath() ;			
+			ctx.rect(150,200,150,200) 
+			ctx.closePath() ;
+			ctx.stroke() ;				// Drawing the above coded path
+		</script>
+	</body>
+</html>

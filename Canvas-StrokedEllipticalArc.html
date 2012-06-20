@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>HTML5 Canvas Example: Elliptical_Arc</title>
+	</head>
+	<body>
+		<canvas id = 'canvas1' width = "800" height = "800"></canvas>
+		
+		<script type = "text/javascript">
+			var ctx = document.getElementById('canvas1').getContext('2d') ;
+						
+			// Stroked Circular Arc
+			var startAngleinDegrees = 0 ;
+			var endAngleinDegrees	= 120 ;
+			
+			var startAngleinRadians = (Math.PI/180) * startAngleinDegrees ;
+			var endAngleinRadians	= (Math.PI/180) * endAngleinDegrees ;
+			
+			ctx.beginPath() ;
+			ctx.ellipse(200, 250, 50, 50, 0, startAngleinRadians, endAngleinRadians, false) ;
+			ctx.closePath() ;
+			ctx.stroke() ;
+		</script>
+	</body>
+</html>
+

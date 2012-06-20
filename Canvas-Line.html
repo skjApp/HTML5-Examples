@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>HTML5 Canvas Example: line</title>
+	</head>
+	<body>
+		<canvas id = 'canvas1' width = "800" height = "800"></canvas>
+		
+		<script type = "text/javascript">
+			var ctx = document.getElementById('canvas1').getContext('2d') ;
+			
+			// Drawing a simple line
+			ctx.beginPath() ;			
+			ctx.moveTo(50,100) ;		// Starting point of line 
+			ctx.lineTo(200,150) ;		// Ending point of line
+			ctx.closePath() ;
+			ctx.stroke() ;				// Drawing the above coded path
+		</script>
+	</body>
+</html>

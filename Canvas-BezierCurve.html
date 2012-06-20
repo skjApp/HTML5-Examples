@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>HTML5 Canvas Example: Bezier_Curve</title>
+	</head>
+	<body>
+		<canvas id = 'canvas1' width = "800" height = "800"></canvas>
+		
+		<script type = "text/javascript">
+			var ctx = document.getElementById('canvas1').getContext('2d') ;
+						
+			// Bezier Curve
+			ctx.beginPath();
+			ctx.moveTo(550,450);
+			ctx.bezierCurveTo(350,300,400,450,550,350);
+			ctx.stroke();
+		</script>
+	</body>
+</html>

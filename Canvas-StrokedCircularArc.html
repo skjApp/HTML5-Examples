@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>HTML5 Canvas Example: Circular_Arc</title>
+	</head>
+	<body>
+		<canvas id = 'canvas1' width = "800" height = "800"></canvas>
+		
+		<script type = "text/javascript">
+			var ctx = document.getElementById('canvas1').getContext('2d') ;
+						
+			// Stroked Circular Arc
+			var startAngleinDegrees = 10 ;
+			var endAngleinDegrees	= 150 ;
+			
+			var startAngleinRadians = (Math.PI/180) * startAngleinDegrees ;
+			var endAngleinRadians	= (Math.PI/180) * endAngleinDegrees ;
+			
+			ctx.beginPath() ;
+			ctx.arc(300, 250, 50, startAngleinRadians, endAngleinRadians, true) ; 
+			ctx.stroke() ;
+		</script>
+	</body>
+</html>
+

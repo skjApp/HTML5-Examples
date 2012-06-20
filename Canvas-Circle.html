@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>HTML5 Canvas Example: Circle</title>
+	</head>
+	<body>
+		<canvas id = 'canvas1' width = "800" height = "800"></canvas>
+		
+		<script type = "text/javascript">
+			var ctx = document.getElementById('canvas1').getContext('2d') ;
+						
+			// Circle
+			var startAngleinDegrees = 0 ;
+			var endAngleinDegrees	= 360 ;
+			
+			var startAngleinRadians = (Math.PI/180) * startAngleinDegrees ;
+			var endAngleinRadians	= (Math.PI/180) * endAngleinDegrees ;
+			
+			ctx.beginPath() ;
+			ctx.arc(350, 250, 50, startAngleinRadians, endAngleinRadians, false) ; 
+			ctx.stroke() ;
+		</script>
+	</body>
+</html>

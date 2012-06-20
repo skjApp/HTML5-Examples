@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>HTML5 Canvas Example: Quadratic_Curve</title>
+	</head>
+	<body>
+		<canvas id = 'canvas1' width = "800" height = "800"></canvas>
+		
+		<script type = "text/javascript">
+			var ctx = document.getElementById('canvas1').getContext('2d') ;
+						
+			// Quadratic Curve
+			ctx.beginPath();
+			ctx.moveTo(450,450);
+			ctx.quadraticCurveTo(350,450,350,350);
+			ctx.closePath();
+			ctx.stroke();
+		</script>
+	</body>
+</html>
+

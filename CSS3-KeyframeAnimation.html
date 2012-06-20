@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HTML5_CSS3_Example : Keyframe</title>
+		<style type="text/css">
+			div
+			{
+				width : 100px ;
+				height : 200px ;
+				background: green ;
+								
+				animation: testAnimation 5s infinite ;
+				-moz-animation:testAnimation 5s infinite; /* Firefox */
+				-webkit-animation:testAnimation 5s infinite; /* Safari and Chrome */
+								
+			}
+			
+			@keyframes testAnimation
+			{
+				from 
+				{
+					background:#AAABEB ;
+					width:50px ;
+					left: 0px ;					
+				}
+				to
+				{
+					background: orange ;
+					width : 400px ;
+					left: 300px ;
+				}				
+			}
+			
+			@-moz-keyframes testAnimation /*Firefox*/
+			{
+				from 
+				{
+					background:#AAABEB ;
+					width:50px ;
+					left: 0px ;					
+				}
+				to
+				{
+					background: orange ;
+					width : 400px ;
+					left: 300px ;
+				}
+			}
+			
+			@-webkit-keyframes testAnimation /* Safari and Chrome */
+			{
+				from 
+				{
+					background:#AAABEB ;
+					width:50px ;
+					left: 0px ;					
+				}
+				to
+				{
+					background: orange ;
+					width : 400px ;
+					left: 300px ;
+				}
+			}
+		</style>
+	</head>
+	<div>SKJAPP.com</div>
+</html>

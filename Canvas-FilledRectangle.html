@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>HTML5 Canvas Example: Filled_Rect</title>
+	</head>
+	<body>
+		<canvas id = 'canvas1' width = "800" height = "800"></canvas>
+		
+		<script type = "text/javascript">
+			var ctx = document.getElementById('canvas1').getContext('2d') ;
+						
+			// Filled Rectangle
+			ctx.beginPath() ;			
+			ctx.rect(200,50, 100,100) ;
+			ctx.closePath() ;			
+			ctx.fill() ;				
+		
+		</script>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Example - AJAX Basic</title>
+	</head>
+	<body>
+		
+		<input id = 'button1' type = 'button' value = 'AJAX' onclick="ajax()"/>
+		
+		<div id = 'div1'>
+			Hello Ajax Trainee
+		</div>
+		
+		<script type = 'text/javascript'>
+			
+			function ajax()
+			{	
+				var ajaxObject ;
+				
+				// code for IE7+, Firefox, Chrome, Opera, Safari
+				if (window.XMLHttpRequest)
+				{
+					ajaxObject = new XMLHttpRequest();
+					
+					ajaxObject.open("GET","CloudFormation.txt",true);
+					ajaxObject.send();
+					
+					ajaxObject.onreadystatechange = function()
+					{
+						if (ajaxObject.readyState == 4 && ajaxObject.status == 200)
+					    {
+					   		document.getElementById("div1").innerHTML = ajaxObject.responseText;
+					   		
+					    }
+					}
+				}
+
+			}
+			
+		</script>
+		
+	</body>
+</html>

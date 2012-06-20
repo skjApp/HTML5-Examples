@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Example - History API replaceState</title>
+	</head>
+	<body>
+		
+		<input id = 'button1' type = 'button' value = 'history.replaceState' onclick="updateHistory()"/>
+		
+		<script type = 'text/javascript'>
+			
+			var count = 0 ;
+			
+			function updateHistory()
+			{	
+				var stateObject = { 'Website' : 'www.skjapp.com' };
+				
+				window.history.replaceState(stateObject, "Author : Saurabh Jain", 'page' + count);
+				count++ ;
+				
+				alert(window.history.state['Website']) ;
+			
+			}
+			
+		</script>
+		
+	</body>
+</html>

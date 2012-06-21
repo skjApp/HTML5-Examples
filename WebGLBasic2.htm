@@ -1,0 +1,67 @@
+<!-- Code based on http://dev.opera.com/articles/view/raw-webgl-part1-getting-started/ -->
+
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>WebGL Basic 2</title>
+	</head>
+	<body>
+		<canvas id='canvas1'>
+		</canvas>
+		
+		<script>
+		
+		var canvas1 = document.getElementById('canvas1');
+		var webGL = canvas1.getContext('experimental-webgl');
+
+		// STEP 1 : DRAWING A VERTEX BUFFER
+		var vertexPosBuffer = webGL.createBuffer() ;
+		webGL.bindBuffer(webGL.ARRAY_BUFFER, vertexPosBuffer);
+		var vertices = [];
+		
+		// These 3 coordinates represent points on a Cartesian plane
+		// These are 2D coordinates
+		var vertices = [-1, 1, 0, 0, 1, 1];
+		
+		webGL.bufferData(webGL.ARRAY_BUFFER, new Float32Array(vertices), webGL.STATIC_DRAW);
+		
+		// STEP 2 : VERTEX SHADER
+		var vs = 'attribute vec2 pos;' + 'void main() { gl_Position = vec4(pos, 0, 1); }';
+		
+		// STEP 3 : FRAGMENT SHADER
+		var fs = 'precision mediump float;' + 'void main() { gl_FragColor = vec4(0,0.8,0,1); }';
+		
+		// CREATING A PROGRAM
+		var program = createProgram(vs,fs);
+		
+		
+		webGL.useProgram(program);
+
+		program.vertexPosAttrib = webGL.getAttribLocation(program, 'pos');
+		webGL.enableVertexAttribArray(program.vertexPosAttrib);
+		webGL.vertexAttribPointer(program.vertexPosAttrib, 2, webGL.FLOAT, false, 0, 0);
+		webGL.drawArrays(webGL.TRIANGLES, 0, 3);
+		
+		function createProgram(vstr, fstr)
+		{
+			var program = webGL.createProgram();
+		 	var vshader = createShader(vstr, webGL.VERTEX_SHADER);
+		 	var fshader = createShader(fstr, webGL.FRAGMENT_SHADER);
+		 	webGL.attachShader(program, vshader);
+		  	webGL.attachShader(program, fshader);
+		  	webGL.linkProgram(program);
+		  	return program;
+		}
+
+		function createShader(str, type)
+		{
+  			var shader = webGL.createShader(type);
+  			webGL.shaderSource(shader, str);
+  			webGL.compileShader(shader);
+  			return shader;
+		}
+
+		</script>
+	</body>
+</html>

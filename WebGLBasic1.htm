@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>WebGL Basic</title>
+	</head>
+	<body>
+		<canvas id='canvas1'>
+		</canvas>
+		
+		<script>
+		
+		var canvas1 = document.getElementById('canvas1');
+		var webGL = canvas1.getContext('experimental-webgl');
+
+		webGL.clearColor(0,1,0,1);
+		webGL.clear(webGL.COLOR_BUFFER_BIT);
+
+		</script>
+	</body>
+</html>

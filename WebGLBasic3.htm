@@ -1,0 +1,75 @@
+<!-- Code based on http://dev.opera.com/articles/view/raw-webgl-part1-getting-started/ -->
+
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>WebGL Basic 3</title>
+	</head>
+	<body>
+		<canvas id='canvas1' width = '800px' height = '600px'>
+		</canvas>
+		
+		<script>
+		
+		var canvas1 = document.getElementById('canvas1');
+		var webGL	= canvas1.getContext('experimental-webgl');
+
+		// STEP 1 : DRAWING A VERTEX BUFFER
+		var vertexPosBuffer = webGL.createBuffer() ;
+		webGL.bindBuffer(webGL.ARRAY_BUFFER, vertexPosBuffer);
+		var vertices = [];
+		
+		// These coordinates represent points on a Cartesian plane
+		// These are 2D coordinates
+		var vertices = [0, 4,   0, 0,   4, 0,  4, 4,   2, 5];
+		
+		webGL.bufferData(webGL.ARRAY_BUFFER, new Float32Array(vertices), webGL.STATIC_DRAW);
+		
+		// STEP 2 : VERTEX SHADER
+		var vs = 'attribute vec2 pos1; void main() { gl_Position = vec4(pos1, 0, 10); }';
+		
+		// STEP 3 : FRAGMENT SHADER
+		var fs = 'precision mediump float; void main() { gl_FragColor = vec4(0.8,0,0,1); }';		// Determining color of figure (rgba format)
+		
+		// CREATING A PROGRAM
+		var program = createProgram(vs,fs);
+		
+		// USING A PROGRAM
+		webGL.useProgram(program);
+
+		program.vertexPosAttrib = webGL.getAttribLocation(program, 'pos1');
+		webGL.enableVertexAttribArray(program.vertexPosAttrib);
+		webGL.vertexAttribPointer(program.vertexPosAttrib, 2, webGL.FLOAT, false, 0, 0);
+		
+		// Try one of these at a time
+		// webGL.drawArrays(webGL.POINTS, 0, 5);			// POINTS
+		// webGL.drawArrays(webGL.LINES, 0, 5);				// LINES
+		webGL.drawArrays(webGL.LINE_LOOP, 0, 5);			// LINE_LOOP
+		// webGL.drawArrays(webGL.LINE_STRIP, 0, 5);		// LINE_STRIP
+		// webGL.drawArrays(webGL.TRIANGLES, 0, 5);			// TRIANGLES
+		// webGL.drawArrays(webGL.TRIANGLE_STRIP, 0, 5);	// TRIANGLE_STRIP
+		// webGL.drawArrays(webGL.TRIANGLE_FAN, 0, 5);		// TRIANGLE_FAN
+		
+		function createProgram(vstr, fstr)
+		{
+			var program = webGL.createProgram();
+		 	var vshader = createShader(vstr, webGL.VERTEX_SHADER);
+		 	var fshader = createShader(fstr, webGL.FRAGMENT_SHADER);
+		 	webGL.attachShader(program, vshader);
+		  	webGL.attachShader(program, fshader);
+		  	webGL.linkProgram(program);
+		  	return program;
+		}
+
+		function createShader(str, type)
+		{
+  			var shader = webGL.createShader(type);
+  			webGL.shaderSource(shader, str);
+  			webGL.compileShader(shader);
+  			return shader;
+		}
+
+		</script>
+	</body>
+</html>

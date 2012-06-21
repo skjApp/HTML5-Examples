@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+	<head>		
+		<title>HTML5 Form Example:Datetime-local </title>
+	</head>
+	<body>
+		<form>
+			<label>Input type datetime-local 
+				<input type='datetime-local' id='datetime-local' value = '' autofocus />
+				<input type='button' id='button' value = 'Validate' />				
+			</label>
+			
+			<script type = 'text/javascript'>
+				// Checking data validity for datetime-local 
+				var input1	= document.getElementById('datetime-local') ;
+				var button1 = document.getElementById('button') ;
+				
+				button1.onclick = function()
+				{
+					// Returns true if the element's value has no validity problems; false otherwise.
+					alert(input1.checkValidity()) ;						
+				}
+				
+			</script>
+		</form>
+	</body>
+</html>

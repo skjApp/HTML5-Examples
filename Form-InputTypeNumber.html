@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>HTML5 Form Example:Number</title>
+	</head>
+	<body>
+		<form>
+			<label>Input type Number
+				<input  id = 'number' type = 'number' min="0" max="10" step="2" value="6" />
+				<input type='button' id='button' value = 'validate' />				
+			</label>
+			
+			<script type = 'text/javascript'>
+				// Checking data validity for Number
+				var input1	= document.getElementById('number') ;
+				var button1 = document.getElementById('button') ;
+				
+				button1.onclick = function()
+				{
+					// Returns true if the element's value has no validity problems; false otherwise.
+					alert(input1.checkValidity()) ;						
+				}
+				
+			</script>
+		</form>
+	</body>
+</html>

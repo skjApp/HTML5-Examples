@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>HTML5 Form Example:Time</title>
+	</head>
+	<body>
+		<form>
+			<label>Input type Time
+				<input type='time' id='time' value = '' autofocus />
+				<input type='button' id='button' value = 'Validate' />				
+			</label>
+			
+			<script type = 'text/javascript'>
+				// Checking data validity for time
+				var input1	= document.getElementById('time') ;
+				var button1 = document.getElementById('button') ;
+				
+				button1.onclick = function()
+				{
+					// Returns true if the element's value has no validity problems; false otherwise.
+					alert(input1.checkValidity()) ;						
+				}
+				
+			</script>
+		</form>
+	</body>
+</html>

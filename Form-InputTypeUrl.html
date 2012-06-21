@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>HTML5 Form Example:URL</title>
+	</head>
+	<body>
+		<form>
+			<label>Input type URL
+				<input type='url' id='url' value = '' autofocus />
+				<input type='button' id='button' value = 'Validate' />				
+			</label>
+			
+			<script type = 'text/javascript'>
+				// Checking data validity for URL
+				var input1	= document.getElementById('url') ;
+				var button1 = document.getElementById('button') ;
+				
+				button1.onclick = function()
+				{
+					// Returns true if the element's value has no validity problems; false otherwise.
+					alert(input1.checkValidity()) ;						
+				}
+				
+			</script>
+		</form>
+	</body>
+</html>

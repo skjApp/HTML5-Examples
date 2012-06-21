@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>HTML5 Form Example:TelNo.</title>
+	</head>
+	<body>
+		<form>
+			<!-- tel does not enforce a particular syntax. So if you want to ensure a particular format, 
+				 you can use pattern or setCustomValidity() to do additional validation.
+			-->
+			
+			<label>Input Type Tel 
+				<input id = 'input' 	type = 'tel'	value = '+91 98111222333' />
+				<input id = 'button'	type = 'button'	value = 'validate' />
+			</label>
+			<br/>
+		</form>
+		
+		<script type="text/javascript">
+			// Checking data validity for Input1
+			var input1	= document.getElementById('input') ;
+			var button1  = document.getElementById('button') ;
+			
+			button1.onclick = function()
+			{
+				alert(input1.checkValidity()) ;	// Returns true if the element's value has no validity problems; false otherwise.
+			}
+		</script>
+	</body>
+</html>

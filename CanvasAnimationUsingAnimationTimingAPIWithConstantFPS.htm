@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Canvas Animation Using Animation Timing API</title>
+	</head>
+	<body>
+		
+		<canvas id = 'canvas1' width = '500px' height = '500px'>
+		</canvas>
+		
+		<input id = 'button1' type='button' value = 'Start Animation'	onclick = startAnimation() />
+		
+		<div id = 'div1'>0
+		</div>
+		
+		<script type="text/javascript">
+			
+			var canvas1 = document.getElementById('canvas1') ;
+			var ctx		= canvas1.getContext('2d') ;
+			
+			var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||  window.webkitRequestAnimationFrame || window.msRequestAnimationFrame || window.oRequestAnimationFrame ;
+			
+			var div1 = document.getElementById('div1') ;
+			
+			var animationData = 
+			{
+				'currentFrame' 	: 0 ,
+				'x'				: 10,
+				'y'				: 10,
+				
+				'imageSrc'			: 'https://github.com/skjApp/OpenGraphics/raw/master/BalloonBoy1(416x78).png' ,
+				"frames":			[
+										{'xOffset':  0,'yOffset':0, 'width': 41,'height': 78}, 	// frame 0
+										{'xOffset': 41,'yOffset':0, 'width': 33,'height': 78},	// frame 1
+										{'xOffset': 74,'yOffset':0, 'width': 32,'height': 78},	// frame 2
+										{'xOffset':106,'yOffset':0, 'width': 34,'height': 78},	// frame 3
+										{'xOffset':140,'yOffset':0, 'width': 33,'height': 78},	// frame 4
+										{'xOffset':173,'yOffset':0, 'width': 35,'height': 78},	// frame 5
+									]
+			} ;
+			
+			var img ;
+			
+			function loadAnimation()
+			{				
+				img = new Image() ;
+				img.src = animationData['imageSrc'] ;
+			}
+			
+			loadAnimation() ;
+			
+			var frameTime = (1000/60) ;
+			
+			var count = 0 ;
+			var time = 0 ;
+			var firstTime = 0 ;
+			
+			var time1 = 0 ;
+			var time2 = 0 ;
+			
+			function animate()
+			{
+				ctx.fillColor = 'black'  ;
+				ctx.fillRect(0,0,500,500) ;
+			
+				var x = animationData['x'] ;
+				var y = animationData['y'] ;
+				
+				var currentFrame = animationData['currentFrame']
+				var frame = animationData['frames'][currentFrame] ;
+				
+				var xOffset = frame['xOffset'] ;
+				var yOffset = frame['yOffset'] ;
+				var width	= frame['width'] ;
+				var height	= frame['height'] ;
+				
+				if(img != undefined)
+				{
+					ctx.drawImage(img, xOffset, yOffset, width, height, x, y, width, height) ;
+				}
+				
+				// Updating Current Frame
+				if(currentFrame < 5)
+				{
+					animationData['currentFrame'] = animationData['currentFrame'] + 1 ;
+				}
+				else
+				{
+					animationData['currentFrame'] = 0 ;
+				}
+				
+				// Updation x
+				animationData['x'] = animationData['x'] + 1 ;
+			}
+			
+			function startAnimation()
+			{
+				animationLoop() ;
+			}
+			
+			function animationLoop()
+			{
+				time1 = Date.now() ;
+				
+				if(time2 == 0)
+				{
+					time2 = time1 ;
+				}
+				
+				time = Math.floor(time1/1000) ;
+				
+				var timeGap = time1 - time2 ;
+				
+				var nextTime = (count + 1) * frameTime ;
+				
+				if(timeGap >= nextTime)
+				{
+					animate() ;
+					count++ ;
+				}
+				
+				requestAnimationFrame(animationLoop) ;
+				
+				if(firstTime == 0)
+				{
+					firstTime = time ;
+				}
+				
+				div1.innerHTML = 'Average Frames Per Second : ' + (count/(time - firstTime)) ;
+				// On Google Chrome and Firefox the frame rate became near constant after a few minutes of execution
+			}
+			
+		</script>
+		
+	</body>
+</html>

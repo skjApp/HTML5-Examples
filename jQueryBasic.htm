@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+   		<meta charset="utf-8">
+   		<title>jQuery Basic Example</title>
+ 	</head>
+ 	<body>
+		<a href="http://www.skjapp.com">Click</a>
+   		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js">
+   		</script>
+   		
+   		<script>
+     		$(document).ready(function(){
+       			$("a").click(function(event){
+         			event.preventDefault();
+         			$(this).fadeOut("slow");
+       			});
+     		});
+   		</script>
+ 	</body>
+ </html>

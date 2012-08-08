@@ -7,7 +7,6 @@
 			{
 				width:350px;
 				height:70px;
-				padding:10px;
 				border:1px solid #aaaaaa;
 			}
 		</style>
@@ -19,17 +18,17 @@
 			event.preventDefault();		// Cancel the default browser action. This is to ensure that if we drop a link, the browser doesn’t go off and surf to that location
 		}
 		
-		function drag(event)
-		{
-			event.dataTransfer.setData("testImage",event.target.id);		// testImage is the key used here for setting data. You can use any key
-		}
-		
 		function drop(event)
 		{
 			event.preventDefault(); 	// Cancel the default browser action. This is to ensure that if we drop a link, the browser doesn’t go off and surf to that location
 			
 			var data = event.dataTransfer.getData("testImage");				// testImage is the key used here for getting data because setData used it
 			event.target.appendChild(document.getElementById(data));
+		}
+		
+		function drag(event)
+		{
+			event.dataTransfer.setData("testImage",event.target.id);		// testImage is the key used here for setting data. You can use any key
 		}
 		
 		</script>

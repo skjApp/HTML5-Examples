@@ -7,7 +7,6 @@
 			{
 				width:350px;
 				height:200px;
-				padding:10px;
 				border:1px solid #aaaaaa;
 			}
 		</style>
@@ -19,19 +18,13 @@
 			event.preventDefault();		// Cancel the default browser action. This is to ensure that if we drop a link, the browser doesn’t go off and surf to that location
 		}
 		
-		function drag(event)
-		{
-			event.dataTransfer.setData("testImage",event.target.id);		// testImage is the key used here for setting data. You can use any key
-		}
-		
 		function drop(event)
 		{
 			event.preventDefault(); 	// Cancel the default browser action. This is to ensure that if we drop a link, the browser doesn’t go off and surf to that location
 			
-			var file = event.dataTransfer.files[0] ;				// testImage is the key used here for getting data because setData used it
+			var img1 = new Image() ;	// variable for holding dropped image's data
 			
-			var img1 = new Image() ;
-			
+			var file = event.dataTransfer.files[0] ;	
 			
 			var reader = new FileReader() ;  
     		reader.readAsDataURL(file);
@@ -51,7 +44,7 @@
 
 	<body>
 		
-		<p>Drag something from desktop into the rectangle:</p>
+		<p>Drag image file from desktop into the rectangle:</p>
 		
 		<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
 			

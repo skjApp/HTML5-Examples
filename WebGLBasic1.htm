@@ -12,7 +12,13 @@
 		var canvas1 = document.getElementById('canvas1');
 		var webGL = canvas1.getContext('experimental-webgl');
 
+		// Setting the clear color
+		// 1st parameter - Red value between 0 and 1
+		// 2nd parameter - Green value between 0 and 1
+		// 3rd parameter - Blue value between 0 and 1
+		// 4th parameter - Transparency - value between 0 (completely transparent) and 1 (completely opaque)
 		webGL.clearColor(0,1,0,1);
+		
 		webGL.clear(webGL.COLOR_BUFFER_BIT);
 
 		</script>

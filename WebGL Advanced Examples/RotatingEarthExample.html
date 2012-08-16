@@ -38,7 +38,9 @@
 		        scene.add( camera );
 		
 				// Step 3 : Add Object
-		       	//geometry = new THREE.CubeGeometry(40, 40, 40);
+				// Parameter 1 : radius
+				// Parameter 2 : segmentsWidth
+				// Parameter 3 : segmentsHeight
 		        geometry = new THREE.SphereGeometry( 20, 60, 24 ) ;
 	
 				material = new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'land_ocean_ice_cloud_2048.jpg' ), overdraw: true } )

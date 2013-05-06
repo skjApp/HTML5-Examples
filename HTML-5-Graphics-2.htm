@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Basic HTML 5 Document</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	</head>
+	<body>
+		<canvas id="mycanvas" width="800px" height="600px"></canvas>
+		
+		<script type="application/javascript">
+			
+			// Getting context of the HTML 5 Canvas
+			var ctx = document.getElementById('mycanvas').getContext('2d') ; 
+			
+			function roundedRect(x,y,width,height,radius,mode,color)
+			{
+				ctx.beginPath();
+				ctx.moveTo(x,y+radius);
+				ctx.lineTo(x,y+height-radius);
+				ctx.quadraticCurveTo(x,y+height,x+radius,y+height);
+				ctx.lineTo(x+width-radius,y+height);
+			 	ctx.quadraticCurveTo(x+width,y+height,x+width,y+height-radius);
+			 	ctx.lineTo(x+width,y+radius);
+			 	ctx.quadraticCurveTo(x+width,y,x+width-radius,y);
+			 	ctx.lineTo(x+radius,y);
+			 	ctx.quadraticCurveTo(x,y,x,y+radius);
+			
+				if(mode == 'fill')
+				{
+					ctx.fill() ;
+				}
+				else
+				{
+				 	ctx.stroke() ;
+				}
+			}
+
+			var grad = ctx.createLinearGradient(0,25,0,0) ;
+			grad.addColorStop(1, '#74cd64');  		// (gradient Starting portion, color)
+			grad.addColorStop(0, '#43bf2d');   		// (gradient end portion, color)
+			ctx.fillStyle = grad ;
+			
+			var outline1 = ctx.createLinearGradient(0,25,0,0) ;
+			outline1.addColorStop(1, '#40bb2c');  // (gradient Starting portion, color)
+			outline1.addColorStop(0, '#27771b');   // (gradient end portion, color)
+			
+			ctx.strokeStyle = outline1 ;
+			roundedRect(0,0,75,25,5,'fill') ;
+			roundedRect(0,0,75,25,5) ;
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Basic HTML 5 Document</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	</head>
+	<body>
+		<canvas id="mycanvas" width="800px" height="600px"></canvas>
+		
+		<script type="application/javascript">
+			
+			// Getting context of the HTML 5 Canvas
+			var ctx = document.getElementById('mycanvas').getContext('2d') ; 
+			
+			// Drawing Arc - Anticlockwise
+			ctx.beginPath() ;
+			ctx.arc(50, 75, 50, 0,2, false) ; //x, y, radius, startAngle (Radians), endAngle (Radians), anticlockwise
+			ctx.stroke();
+			ctx.closePath() ;
+			
+			// Drawing Arc - Clockwise
+			ctx.beginPath() ;
+			ctx.arc(200, 75, 50, 0,2, true) ; //x, y, radius, startAngle (Radians), endAngle (Radians), anticlockwise
+			ctx.stroke();
+			ctx.closePath() ;
+			
+			// Drawing Line of width 30 pixels
+			ctx.lineWidth = 30 ;
+			ctx.beginPath() ;
+			ctx.moveTo(300,25) ;
+			ctx.lineTo(350,100) ;
+			ctx.stroke() ;
+			ctx.closePath() ;
+			
+			// Drawing lines joint in graphical way
+			ctx.lineJoin = 'round' ;
+			ctx.beginPath() ;
+			ctx.moveTo(400,25) ;
+			ctx.lineTo(450,75) ;
+			ctx.lineTo(500,75) ;
+			ctx.stroke() ;
+			
+			// Changing line width to 3 pixels
+			ctx.lineWidth = 3 ;
+			
+			// Drawing Filled Rectangle
+			ctx.fillRect(560,10,100,100);
+			
+			// Drawing plain rectangle
+			ctx.strokeRect(700,40,50,50);
+			
+			// Drawing Quadratic Curve
+			ctx.beginPath();
+			ctx.moveTo(175,325);
+			ctx.quadraticCurveTo(0,200,100,350);
+			ctx.stroke();
+			
+			// Drawing Text
+			ctx.font = "20pt Arial" ;
+			ctx.fillText("OpenClass", 240, 340,100) ; // specify text, left, right and max area
+			
+			// Drawing image from external source
+			var img = new Image(); 										// Create new Image object
+			img.src = 'http://images.openclass.in/openclasslogo.png'; 	// Set source path
+			
+			img.onload= function()										// Image has to be drawn only after loading
+			{
+				ctx.drawImage(img,400,270) ;	
+			} 
+			
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>HTML 5 Geolocation Example 1</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	</head>
+	<body>
+		HTML 5 Geolocation Example
+		
+		<script language="JavaScript" type="text/javascript">
+	
+			function findLocation()
+			{
+				if (window.navigator.geolocation) 
+				{					
+					window.navigator.geolocation.getCurrentPosition
+					(
+						function(position)
+						{	
+							// Finding Latitude
+							document.writeln('Latitude : ' + position.coords.latitude + '</br>') ;
+							
+							// Finding Longitude
+							document.writeln('Longitude : ' + position.coords.longitude + '</br>') ;
+							
+							// Finding accuracy of Geolocation Position
+							document.writeln('Position Accuracy : ' + position.coords.accuracy + '</br>') ;
+							
+							// Finding Altitude
+							var altitude = position.coords.altitude ;
+							
+							if(altitude != null)
+							{
+								document.writeln('Altitude : ' + altitude + '</br>') ;
+							}
+							else
+							{
+								document.writeln('Your device cannot find the altitude.</br>') ;
+							}
+							
+							// Finding Altitude Accuracy
+							var altitudeAcc = position.coords.altitudeAccuracy ;
+							
+							if(altitudeAcc != null)
+							{
+								document.writeln('Altitude : ' + altitudeAcc + '</br>') ;
+							}
+							else
+							{
+								document.writeln('Your device cannot find the altitude accuracy.</br>') ;
+							}
+							
+							// Finding Heading Direction
+							var heading = position.coords.heading ;
+							
+							if(heading != null)
+							{
+								document.writeln('Heading Direction : ' + heading + '</br>') ;
+							}
+							else
+							{
+								document.writeln('Your device cannot find the heading direction.</br>') ;
+							}
+							
+							// Finding speed
+							var speed = position.coords.speed ;
+							
+							if(speed != null)
+							{
+								document.writeln('Speed : ' + speed + '</br>') ;
+							}
+							else
+							{
+								document.writeln('Your device cannot find the speed of device.</br>') ;
+							}
+							
+						},
+						
+						function (error)
+						{
+							switch(error.code) 
+							{
+								case error.TIMEOUT:
+									alert ('Timeout');
+									break;
+								case error.POSITION_UNAVAILABLE:
+									alert ('Position unavailable');
+									break;
+								case error.PERMISSION_DENIED:
+									alert ('Permission denied');
+									break;
+								case error.UNKNOWN_ERROR:
+									alert ('Unknown error');
+									break;
+							}
+						}
+		
+					);
+				}
+				else
+				{
+					alert('hello1') ;
+				}
+			}
+			
+			findLocation() ;
+		</script>
+		
+	</body>
+</html>

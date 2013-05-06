@@ -1,0 +1,106 @@
+#font-example1
+{
+	font-family : Georgia;
+	font-size : 20px ;
+}
+
+/* Text Color Example */
+#text-example1
+{
+	color : red ;
+	/* 	Alternatively you can use the following formats :
+	 	color : #FF0000 ;
+	 	color : rgb(255,0,0) ;
+	 */
+}
+
+/* Text Highlight Example */
+#text-example2
+{
+	background-color : rgb(0,255,0) ;
+}
+
+/* Same Highlight Example as above but using div instead of span */ 
+#text-example3
+{
+	background-color : rgb(0,255,0) ;
+	display : inline ;
+}
+
+/* Text Horizontal Alignment Example */
+#text-example4
+{
+	/* Try various examples within this example by commenting and uncommenting various options */
+	/* text-align : left ; */
+	/* text-align : right ; */
+	/* text-align : center ; */
+	text-align : justify ; /* Justify shall work nearly same as MS Word's justify button*/
+}
+
+/* Text Indent Example */
+#text-example5
+{
+	text-indent : 5% ;			/* Indentation by percentage of width */
+	/* text-indent : 10px ; */  /* Indentation by number of pixels */
+}
+
+/* Giving Border to div */ 
+#text-example6
+{	
+	/* LEFT BORDER */
+	/* Both pieces of code have same effect */
+	border-left : 5px double blue ;	/* width style color */
+	
+	/* border-left-width : 5px ;
+	border-left-style : double;
+	border-left-color : blue ; */
+	
+	/* BOTTOM BORDER */
+	/* Both pieces of code have same effect */
+	/* border-bottom : 5px double blue ; */	/* width style color */
+	
+	/* border-bottom-width : 5px ;
+	border-bottom-style : double;
+	border-bottom-color : blue ; */
+	
+	/* RIGHT BORDER */
+	/* Both pieces of code have same effect */
+	/* border-right : 5px dotted blue ; */	/* width style color */
+	
+	/* border-right-width : 5px ;
+	border-right-style : dotted ;
+	border-right-color : blue ; */
+	
+	/* TOP BORDER */
+	/* Both pieces of code have same effect */
+	/* border-top : 5px solid blue ; */	/* width style color */
+	
+	/* 
+	border-top-width : 5px ;
+	border-top-style : solid ;
+	border-top-color : blue ; 
+	*/
+}
+
+/* Setting the case of the text */ 
+#text-example7
+{
+	/* text-transform : lowercase ; */
+	/* text-transform : uppercase ; */
+	text-transform : capitalize;
+	/* text-transform : none ; */
+	
+}
+
+/* Text Vertical Alignment Example */ /* TEST */
+/* #text-example8
+{
+	height : 30px ;
+	background-color : rgb(0,255,0) ;
+	/* Try various examples within this example by commenting and uncommenting various options */
+	/* text-align : left ; */
+	/* text-align : right ; */
+	/* text-align : center ; */
+	/*vertical-align : middle; 
+}*/
+
